@@ -33,7 +33,7 @@ bindsym $mod+Return exec terminal
 bindsym $mod+Shift+q kill
 
 # start program launcher
-bindsym $mod+d exec --no-startup-id dmenu_recency
+# bindsym $mod+d exec --no-startup-id dmenu_recency
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
@@ -124,7 +124,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -415,3 +415,9 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+
+bindsym $mod+d exec rofi -show run -lines 8 -eh 2 -width 100 -padding 260 -opacity "90" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#4AFD0B" -font "Bitstream Vera Sans Mono -b 24"
+exec guake
+bindsym $mod+a exec synclient touchpadoff=0
+bindsym $mod+Shift+a exec synclient touchpadoff=1
