@@ -145,3 +145,4 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 
 source /usr/share/nvm/init-nvm.sh
 alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
+alias pomo='cd ~/projects/simple-pomodoro && npm run dev'
