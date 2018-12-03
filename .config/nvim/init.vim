@@ -13,10 +13,13 @@ Plug 'tomlion/vim-solidity'
 
 Plug 'tpope/vim-fugitive'
 
+Plug 'mxw/vim-jsx'
+
 call plug#end()
 
 " KEYMAPS
 map <C-n> :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -46,10 +49,13 @@ set autoindent
 set textwidth=160
 setlocal smartindent
 
+autocmd Filetype javascript setlocal ts=2 sw=2 sts=2 expandtab
+
+
 :set number
 :set numberwidth=4
 :set cpoptions+=n
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NON<Paste>
 set scrolloff=5 " Keep 3 lines below and above the cursor
 " Store swap files in fixed location, not current directory.
-set dir=~/.vimswap//,/var/tmp//,/tmp//,.
+set dir=~/.vimswap/
