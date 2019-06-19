@@ -146,3 +146,17 @@ export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1
 source /usr/share/nvm/init-nvm.sh
 alias config='/usr/bin/git --git-dir=$HOME/.cfg --work-tree=$HOME'
 alias pomo='cd ~/projects/simple-pomodoro && npm run dev'
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
+
+# Alternative (blocks terminal for 0-3ms)
+cat ~/.cache/wal/sequences
+
+# To add support for TTYs this line can be optionally added.
+source ~/.cache/wal/colors-tty.sh
+(wal -R > /dev/null 2>&1)
+PATH=$PATH:~/scripts/
+alias pip='python -m pip'

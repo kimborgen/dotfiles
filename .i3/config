@@ -63,7 +63,6 @@ bindsym $mod+Shift+F3 exec gksu pcmanfm
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
@@ -282,7 +281,7 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+# exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
@@ -364,7 +363,7 @@ bindsym $mod+m bar mode toggle
 #############################
 
 # Set inner/outer gaps
-gaps inner 50
+gaps inner 15
 gaps outer 0
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
@@ -418,6 +417,12 @@ mode "$mode_gaps_outer" {
 
 
 bindsym $mod+d exec rofi -show run -lines 8 -eh 2 -width 100 -padding 260 -opacity "90" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#4AFD0B" -font "Bitstream Vera Sans Mono -b 24"
+bindsym $mod+Shift+d exec rofi -show emoji -modi emoji -lines 8 -eh 2 -width 100 -padding 260 -opacity "90" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#4AFD0B" -font "Bitstream Vera Sans Mono -b 24"
+
 exec guake
 bindsym $mod+a exec synclient touchpadoff=0
 bindsym $mod+Shift+a exec synclient touchpadoff=1
+#for_window [tiling] resize set 1920 1080
+#for_window [tiling] move position 0 0
+exec --no-startup-id i3-battery-popup
+for_window [title="Battery Warning"] sticky enable
