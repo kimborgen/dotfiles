@@ -1,0 +1,5 @@
+#!/bin/bash
+urxvt -hold -e bash -c -i "wlatex; bash" &
+urxvt -hold -e bash -c -i "watchandrun .bib \"biber main\"; bash" &
+urxvt -e bash -c -i "sleep 3; (zathura main.pdf) &" &
+nvim main.tex

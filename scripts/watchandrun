@@ -1,0 +1,80 @@
+#!/bin/bash
+find . -type f | grep "$1$" | entr $2
+
+# too large
+#find . -type f -printf "%T@ %p\n" | sort -nr | cut -d\  -f2- | grep "$1$" | entr $2
+
+# old code:
+##DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+#DIR=`pwd`
+#echo in dir $DIR
+#COMMAND=$1
+#FILETYPE=$2
+#DEPTH=$3
+#echo Command $COMMAND
+#echo File extension type $FILETYPE
+#echo Optional depth $DEPTH
+#
+#dep=0
+#if [ -z "$DEPTH" ]
+#then
+#      dep=999999
+#else
+#      dep=$DEPTH
+#fi
+#
+## inotify watches all files in the given directory
+#function inotify() {
+#    inotifywait -e close_write,moved_to,create -m . |
+#    while read -r directory events filename; do
+#      # check that the file is the correct filetype
+#      if [[ "$filename" =~ $FILETYPE ]]; then
+#        # go back to original directory
+#        cd $DIR
+#        # And issue the given command
+#        $COMMAND
+#      fi
+#    done
+#}
+#
+#arr=( $DIR )
+#cnt=1
+#locdep=0
+#function get_dirs() {
+#    #echo $locdep
+#    for d in $1/*; do
+#      #echo alldirs "$d"
+#      if [ -d "$d" ]; then
+#        if [ "$cnt" -gt "$dep" ] 
+#        then
+#            break
+#        fi
+#        #echo "$d";
+#        arr[cnt]=$d;
+#        let cnt+=1;
+#        let locdep+=1
+#        get_dirs $d $dep
+#      fi
+#    done
+#    let locdep=$2-1
+#}
+#
+#get_dirs $DIR;
+#echo ${arr[*]};
+#all_watches=()
+#i=0
+#for d in ${arr[*]}; do
+#    cd $d
+#    echo Travelled to $d
+#    inotify &
+#    all_watches[i]=$!
+#    let i+=1
+#done
+##jobs | awk  '{print substr($1,2,1)}'
+#
+#trap 'kill $(${all_watches[*]}); exit' SIGINT
+#sleep infinity
+
+
+
+
