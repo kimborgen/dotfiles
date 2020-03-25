@@ -153,10 +153,19 @@ alias pomo='cd ~/projects/simple-pomodoro && npm run dev'
 (cat ~/.cache/wal/sequences &)
 
 # Alternative (blocks terminal for 0-3ms)
-cat ~/.cache/wal/sequences
+# cat ~/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added.
-source ~/.cache/wal/colors-tty.sh
-(wal -R > /dev/null 2>&1)
+#source ~/.cache/wal/colors-tty.sh
+#(wal -R > /dev/null 2>&1)
 PATH=$PATH:~/scripts/
-alias pip='python -m pip'
+# alias pip='python -m pip'
+alias yeet='git add -A && git commit -m yeet && git push --force'
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+# exec syndaemon -i 0.5 -d -K 
+export POLYBAR_SHOWING="TRUE"

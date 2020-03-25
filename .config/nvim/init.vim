@@ -19,6 +19,12 @@ Plug 'lervag/vimtex'
 
 Plug 'wmvanvliet/vim-ipython'
 
+Plug 'tpope/vim-fugitive'
+
+Plug 'pangloss/vim-javascript'
+
+Plug 'evanleck/vim-svelte'
+
 "Plug 'xuhdev/vim-latex-live-preview'
 
 call plug#end()
@@ -84,8 +90,17 @@ noremap <space>GG i<++><Esc>GG
 noremap <space>figure i\begin{figure}<Cr>\includegraphics[width=\textwidth]{}<Cr>\caption{}<Cr>\label{fig:}<Cr>\end{figure}<Esc>k$h
 noremap <space>latex i\documentclass{article}<Cr><Cr>% packages<Cr>\usepackage{url}<Cr>\usepackage{hyperref}<Cr>\usepackage{graphicx}<Cr>\usepackage{todonotes}<Cr>\usepackage[backend=biber,style=numeric,sortcites]{biblatex}<Cr>\usepackage{parskip}<Cr>\renewcommand*\contentsname{Table of Contents}<Cr><Cr>% Less used packages<Cr>%\usepackage{rotating}<Cr>%\usepackage{caption}<Cr>%\renewbibmacro{in:}{}<Cr>%\usepackage[margin=1in]{geometry}  <Cr>%\usepackage{listings}<Cr>%\usepackage{tikz}<Cr>%\usetikzlibrary{shapes.geometric, arrows}<Cr>%\tikzstyle{arrow} = [thick,->,>=stealth]<Cr>%\tikzstyle{process} = [rectangle, minimum width=2cm, minimum height=1cm, text centered, draw=black, fill=orange!30]<Cr>%\pagenumbering{gobble}<Cr><Cr>\addbibresource{biblo.bib}<Cr>\begin{document}<Cr><Cr>\title{\vspace{-2cm}Title}<Cr>\author{Kim Aksel Tahuil Borgen}<Cr>\date{\today}<Cr><Cr>\maketitle<Cr><Cr>\section{Section 1}<Cr><Cr><Cr>\nocite{*}<Cr>\printbibliography<Cr>\end{document}<Cr><Esc>
 
+noremap <space>lorem iLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<Esc>
+
 noremap <space>jc :JupyterConnect<Cr>
 noremap <space>jf :JupyterRunFile<Cr>
 noremap <space>jr :JupyterSendRange<Cr>
 
 noremap <space># 0i#<Esc>
+
+noremap <space>div O<div><Esc>jV>o</div><Esc>V<
+
+set backupcopy=yes
+
+
+
